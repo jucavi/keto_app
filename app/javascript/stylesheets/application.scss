@@ -1,5 +1,42 @@
 @import '~bootstrap/scss/bootstrap';
 
+// Fixes bootstrap nav-brand container overlap
+@include media-breakpoint-down(xs) {
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .alert-dismissible {
   padding-left: $close-font-size + $alert-padding-x * 2;
+}
+
+// footer
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  // Margin bottom by footer height
+  margin-bottom: 60px;
+
+  &.container {
+    padding: 40px 15px 0;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  // Set the fixed height of the footer here
+  height: 60px;
+  line-height: 60px; // Vertically center the text there
+
+  &.container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }

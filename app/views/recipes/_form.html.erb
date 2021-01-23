@@ -1,15 +1,17 @@
-<%= form_with(model: recipe) do |form| %>
-  <div class="field">
+<div class="container p-3 my-1">
+  <%= form_with(model: recipe) do |form| %>
+  <div class=form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit 'Submit', class: "btn btn-primary" %>
   </div>
-<% end %>
+  <% end %>
+</div>

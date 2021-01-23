@@ -10,6 +10,10 @@ import "channels"
 
 // Bootstrap
 require("bootstrap")
+
+// Toastr
+global.toastr = require("toastr")
+
 import "../stylesheets/application"
 
 Rails.start()

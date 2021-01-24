@@ -3,7 +3,8 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    # can :manage, Recipe, user_id: user.id
+    can :read, :all
+    can [:update, :destroy], Recipe, user_id: user.id
 
     if user.superadmin_role?
       can :manage, :all

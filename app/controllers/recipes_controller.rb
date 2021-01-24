@@ -1,6 +1,8 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, :only => [:index]
+  skip_before_action :authenticate_user!, only: [:index]
+  load_and_authorize_resource except: [:index]
+  # skip_authorize_resource :only => :new
 
   def index
     @recipes = Recipe.all
@@ -46,6 +48,6 @@ class RecipesController < ApplicationController
     end
 
     def recipe_params
-      params.require(:recipe).permit(:title, :content)
+      params.require(:recipe).permit(:title, :content, :user_id).merge(user_id: current_user.id)
     end
 end

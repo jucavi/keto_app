@@ -22,14 +22,14 @@
                 <%= link_to "Admin area", rails_admin_path, class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
               <% end %>
-              <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
               <div class="dropdown-divider"></div>
               <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
           <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Log in", new_user_session_path, class: "nav-link" %></li>
         <% end %>
       </ul>
     </div>

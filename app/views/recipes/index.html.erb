@@ -17,8 +17,12 @@
         <td><%= recipe.title %></td>
         <td><%= recipe.content %></td>
         <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can? :update, recipe %>
+          <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+          <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <th colspan='2'></th>
+        <% end %>
       </tr>
       <% end %>
     </tbody>

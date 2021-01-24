@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
-  skip_before_action :authenticate_user!, :only => [:index]
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  # load_and_authorize_resource
+  skip_before_action :authenticate_user!, :only => [:index]
 
   def index
     @recipes = Recipe.all

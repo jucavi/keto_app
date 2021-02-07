@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
     alias_action :create, :read, :update, :destroy, to: :crud
 
-    # can :manage, :all # TO GIVE TEMPORARY ACCESS TO EVERYTHING FOR EVERYONE
+    # can :manage, :all
     if user
       can :crud, Recipe, user_id: user.id
     end
@@ -19,8 +19,7 @@ class Ability
     end
 
     if user.supervisor_role?
-      can :manage, User
-      can :manege, Post
+      can :manage, Recipe
     end
   end
 end

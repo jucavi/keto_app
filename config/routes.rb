@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :recipes
   resources :users, only: [:show, :edit, :update]
-  
-  root to: 'recipes#index'
+  root to: 'pages#landing_page'
+  # root to: 'recipes#index'
 end

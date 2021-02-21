@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <title>Keto</title>
     <%= render 'shared/head' %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Bootstrap core CSS -->
+    
+    
+
+    <link rel="icon" type="image/x-icon" href="startbootstrap-grayscale-gh-pages/assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        
+        <!-- Custom styles for this template -->
+        <link href="startbootstrap-grayscale-gh-pages/css/styles.css" rel="stylesheet">
+        
   </head>
 
-  <body>
-    <%= render 'shared/navbar' %>
+  <body id="page-top">
+    <%= render 'layouts/navbar' %>
     <%= render 'shared/messages' %>
 
     <div class="container">
       <%= yield %>
     </div>
 
-    <%= render 'shared/footer' %>
+    <%= render 'layouts/footer' %>
   </body>
+  <footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="startbootstrap-grayscale-gh-pages/js/scripts.js"></script>
+  </footer>
 </html>

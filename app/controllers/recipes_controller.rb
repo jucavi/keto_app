@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @recipe.recipe_ingredients.build
   end
 
   def edit
@@ -48,6 +49,10 @@ class RecipesController < ApplicationController
     end
 
     def recipe_params
-      params.require(:recipe).permit(:title, :content, :user_id).merge(user_id: current_user.id)
+      params.require(:recipe).permit(
+        :title,
+        :content,
+        recipe_ingredients_attributes: [:id, :amount, :unit, :ingredient_id, :_destroy]
+      ).merge(user_id: current_user.id)
     end
 end

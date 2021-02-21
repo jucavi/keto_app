@@ -14,6 +14,9 @@ require("bootstrap")
 // Toastr
 global.toastr = require("toastr")
 
+// Cocoon
+require("@nathanvda/cocoon")
+
 import "../stylesheets/application"
 
 Rails.start()

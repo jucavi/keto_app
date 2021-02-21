@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '3.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
@@ -31,6 +31,7 @@ gem 'simple_form'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
+gem 'cocoon'
 
 
 group :development, :test do

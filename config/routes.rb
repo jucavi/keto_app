@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :recipes
   resources :ingredients
 
-  root to: 'recipes#index'
+  root to: 'pages#landing_page'
+  # root to: 'recipes#index'
 end

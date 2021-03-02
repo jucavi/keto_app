@@ -28,13 +28,19 @@
 
   <body id="page-top">
     <%= render 'layouts/navbar' %>
+    
     <%= render 'shared/messages' %>
 
-    <div class="container">
-      <%= yield %>
+    <div class="nav_container">
+      <%= render 'layouts/navbar' %>
     </div>
 
-    <%= render 'layouts/footer' %>
+    <div>
+      <%= yield %>
+    </div>
+    <div>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
   <footer>
     <!-- Bootstrap core JS-->

@@ -19,7 +19,7 @@ require("@nathanvda/cocoon")
 
 // Selectize
 require("selectize")
-require("packs/language")
+require("packs/ingredient")
 
 import "../stylesheets/application"
 require("packs/ingredient")

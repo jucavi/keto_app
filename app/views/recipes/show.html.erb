@@ -1,21 +1,24 @@
-<p>
-  <strong>Title:</strong>
-  <%= @recipe.title %>
-</p>
+<div class="container">
+  <p>
+    <strong>Title:</strong>
+    <%= @recipe.title %>
+  </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @recipe.content %>
-</p>
+  <p>
+    <strong>Content:</strong>
+    <%= @recipe.content %>
+  </p>
 
-<p>
-  <% @recipe.recipe_ingredients.each do |rec_ing| %>
+  <p>
+    <% @recipe.recipe_ingredients.each do |rec_ing| %>
     <p>
       <%= rec_ing.amount %>
       <%= rec_ing.unit %>
       <%= Ingredient.find(rec_ing.ingredient_id).name %>
     </p>
-  <% end %>
-</p>
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+    <% end %>
+  </p>
+
+  <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+  <%= link_to 'Back', recipes_path %>
+</div>

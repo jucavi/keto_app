@@ -22,7 +22,6 @@ require("selectize")
 require("packs/ingredient")
 
 import "../stylesheets/application"
-require("packs/ingredient")
 
 Rails.start()
 Turbolinks.start()

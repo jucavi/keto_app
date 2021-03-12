@@ -1,34 +1,36 @@
-<h1>Recipes</h1>
+<div class="container">
+  <h1>Recipes</h1>
 
-<div class="container p-2 my-1">
-  <% unless @recipes.empty? %>
-  <table class='table'>
-    <thead>
-      <tr>
-        <th scope='col'>Title</th>
-        <th scope='col'>Content</th>
-        <th colspan='3'></th>
-      </tr>
-    </thead>
+  <div class="container p-2 my-1">
+    <% unless @recipes.empty? %>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th scope='col'>Title</th>
+          <th scope='col'>Content</th>
+          <th colspan='3'></th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.title %></td>
-        <td><%= recipe.content %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <% if can? :update, recipe %>
+      <tbody>
+        <% @recipes.each do |recipe| %>
+        <tr>
+          <td><%= recipe.title %></td>
+          <td><%= recipe.content %></td>
+          <td><%= link_to 'Show', recipe %></td>
+          <% if can? :update, recipe %>
           <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
           <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% else %>
+          <% else %>
           <th colspan='2'></th>
+          <% end %>
+        </tr>
         <% end %>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <% end %>
-</div>
-<br>
+      </tbody>
+    </table>
+    <% end %>
+  </div>
+  <br>
 
-<%= link_to 'New Recipe', new_recipe_path %>
+  <%= link_to 'New Recipe', new_recipe_path %>
+</div>

@@ -10739,8 +10739,7 @@ body {
       rgba(0, 0, 0, 0.1) 0%,
       rgba(0, 0, 0, 0.5) 75%,
       #000000 100%
-    ),
-    url("startbootstrap-grayscale-gh-pages/assets/img/signup.jpg");
+    )
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;

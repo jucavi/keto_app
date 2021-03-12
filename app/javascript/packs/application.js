@@ -17,7 +17,12 @@ global.toastr = require("toastr")
 // Cocoon
 require("@nathanvda/cocoon")
 
+// Selectize
+require("selectize")
+require("packs/ingredient")
+
 import "../stylesheets/application"
+require("packs/ingredient")
 
 Rails.start()
 Turbolinks.start()

@@ -1,5 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'toastr';
+@import 'selectize/dist/css/selectize';
+@import 'selectize/dist/css/selectize.default';
 
 // Fixes bootstrap nav-brand container overlap
 @include media-breakpoint-down(xs) {

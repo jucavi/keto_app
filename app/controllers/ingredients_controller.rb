@@ -22,9 +22,11 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.new(ingredient_params)
 
     if @ingredient.save
-       redirect_to @ingredient, notice: 'Ingredient was successfully created.'
+       # format.html { redirect_to @ingredient, notice: 'Ingredient was successfully created.' }
+       render json: @ingredient, status: :created
     else
-       render :new
+       # format.html { render :new }
+       render json: { errors: @ingredient.errors }, status: :unprocessable_entity
     end
   end
 

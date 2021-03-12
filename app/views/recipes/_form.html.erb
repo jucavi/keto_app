@@ -35,7 +35,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for Ingredient.new, data: { remote: true, type: :json } do |f| %>
+        <%= simple_form_for Ingredient.new do |f| %>
           <%= f.error_notification %>
 
           <div class=form-group">

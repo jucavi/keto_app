@@ -1,18 +1,6 @@
 $(document).on('ready page:load turbolinks:load', function() {
   var selectizeCallback = null;
 
-  $("#recipe_ingredients")
-    .on('cocoon:after-insert', function(e, addedItem) {
-        console.log('after insert');
-        $(addedItem).find('.selectize').selectize({
-          create: function(input, callback) {
-            selectizeCallback = callback;
-            $(".ingredient-modal").modal();
-            $("#ingredient_name").val(input);
-          }
-        });
-    });
-
   $(".ingredient-modal").on("hide.bs.modal", function(e) {
       if (selectizeCallback != null) {
           selectizeCallback();
@@ -32,8 +20,8 @@ $(document).on('ready page:load turbolinks:load', function() {
       method: "POST",
       url: $(this).attr("action"),
       data: $(this).serialize(),
+      dataType: "json",
       success: function(response) {
-        console.log(response);
         selectizeCallback({value: response.id, text: response.name});
         selectizeCallback = null;
 
@@ -49,5 +37,18 @@ $(document).on('ready page:load turbolinks:load', function() {
       $(".ingredient-modal").modal();
       $("#ingredient_name").val(input);
     }
+  });
+
+  $("#recipe_ingredients")
+  .on('cocoon:after-insert', function(e, addedItem) {
+    console.log('after insert');
+    $(addedItem).find('.selectize').selectize({
+      create: function(input, callback) {
+        selectizeCallback = callback;
+
+        $(".ingredient-modal").modal();
+        $("#ingredient_name").val(input);
+      }
+    });
   });
 });

@@ -25,7 +25,7 @@ class IngredientsController < ApplicationController
        # format.html { redirect_to @ingredient, notice: 'Ingredient was successfully created.' }
        render json: @ingredient, status: :created
     else
-       # format.hatml { render :new }
+       # format.html { render :new }
        render json: { errors: @ingredient.errors }, status: :unprocessable_entity
     end
   end

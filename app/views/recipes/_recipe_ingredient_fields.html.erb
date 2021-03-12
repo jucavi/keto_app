@@ -1,7 +1,7 @@
 <div class="nested-fields">
   <%= f.input :amount %>
   <%= f.input :unit %>
-  <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name, {}, { class: "selectize" } %>
+  <%= f.collection_select :ingredient_id, Ingredient.order(:name), :id, :name, {}, { class: "selectize" } %>
 
   <%= link_to_remove_association "Remove Ingredient", f %>
 </div>

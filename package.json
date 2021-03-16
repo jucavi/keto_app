@@ -2,6 +2,7 @@
   "name": "keto-app",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "@nathanvda/cocoon": "^1.2.14",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
@@ -9,8 +10,10 @@
     "@rails/webpacker": "5.2.1",
     "bootstrap": "^4.6.0",
     "jquery": "^3.5.1",
+    "jquery.easing": "^1.4.1",
     "popper.js": "^1.16.1",
     "selectize": "^0.12.6",
+    "startbootstrap-grayscale": "^6.0.3",
     "toastr": "^2.1.4",
     "turbolinks": "^5.2.0"
   },

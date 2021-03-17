@@ -2,9 +2,9 @@
 <header class="masthead">
   <div class="container d-flex h-100 align-items-center">
     <div class="mx-auto text-center">
-      <h1 class="mx-auto my-0 text-uppercase">Grayscale</h1>
-      <h2 class="text-white-50 mx-auto mt-2 mb-5">A free, responsive, one page Bootstrap theme created by Start Bootstrap.</h2>
-      <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
+      <h1 class="mx-auto my-0 text-uppercase">KetoLife</h1>
+      <h2 class="text-white-50 mx-auto mt-2 mb-5">A free app to help you on your Keto journey.</h2>
+      <%=link_to 'Recipes', recipes_path, class: "btn btn-primary js-scroll-trigger" %>
     </div>
   </div>
 </header>
@@ -13,15 +13,13 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
+        <h2 class="text-white mb-4">Start today and keep going!</h2>
         <p class="text-white-50">
-          Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-          <a href="https://startbootstrap.com/theme/grayscale/">the preview page</a>
-          . The theme is open source, and you can use it for any purpose, personal or commercial.
+          Sometimes the people around you won’t understand your journey. That’s okay. It’s YOUR journey.
         </p>
       </div>
     </div>
-    <%= image_pack_tag "media/images/ipad.png", class: "img-fluid",  alt: "" %>easing
+    <%= image_pack_tag "media/images/bg-mug.jpg", class: "img-fluid",  alt: "" %>
   </div>
 </section>
 <!-- Projects-->
@@ -32,8 +30,13 @@
       <div class="col-xl-8 col-lg-7"><%= image_pack_tag "media/images/bg-masthead.jpg", class: "img-fluid mb-3 mb-lg-0",  alt: "" %></div>
       <div class="col-xl-4 col-lg-5">
         <div class="featured-text text-center text-lg-left">
-          <h4>Shoreline</h4>
-          <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+          <h4>Keto Basics</h4>
+          <p class="text-black-50 mb-0">
+            The ketogenic diet is a very low carb, high fat diet that shares many similarities with the Atkins and low carb diets.
+          </p>
+          <p class="text-black-50 mb-0">
+            It involves drastically reducing carbohydrate intake and replacing it with fat. This reduction in carbs puts your body into a metabolic state called ketosis.
+          </p>
         </div>
       </div>
     </div>
@@ -44,8 +47,10 @@
         <div class="bg-black text-center h-100 project">
           <div class="d-flex h-100">
             <div class="project-text w-100 my-auto text-center text-lg-left">
-              <h4 class="text-white">Misty</h4>
-              <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+              <h4 class="text-white">Benefits</h4>
+              <p class="mb-0 text-white-50">
+                A ketogenic diet may provide many health benefits, especially with metabolic, neurological, or insulin-related diseases.
+              </p>
               <hr class="d-none d-lg-block mb-0 ml-0"/>
             </div>
           </div>
@@ -59,8 +64,10 @@
         <div class="bg-black text-center h-100 project">
           <div class="d-flex h-100">
             <div class="project-text w-100 my-auto text-center text-lg-right">
-              <h4 class="text-white">Mountains</h4>
-              <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+              <h4 class="text-white">Tips</h4>
+              <p class="mb-0 text-white-50">
+                Reading food labels, planning your meals ahead, and bringing your own foods when visiting family and friends can make it much easier to stick to the ketogenic diet.
+              </p>
               <hr class="d-none d-lg-block mb-0 mr-0"/>
             </div>
           </div>

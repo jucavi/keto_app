@@ -8,7 +8,9 @@
       <%= f.collection_select :ingredient_id, Ingredient.order(:name), :id, :name, {}, { class: "selectize" } %>
     </div>
     <div class="center">
-      <%= link_to_remove_association "Remove Ingredient", f %>
+      <%= link_to_remove_association f do %>
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      <% end %>
     </div>
   </div>
 </div>

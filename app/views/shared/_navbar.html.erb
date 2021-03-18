@@ -24,7 +24,6 @@
             <a class="nav-link js-scroll-trigger" href="#subscribe">Subscribe</a>
           </li>
         <% end %>
-
         <li class="nav-item">
           <% if user_signed_in?  %>
             <li class="nav-item dropdown">
@@ -35,7 +34,7 @@
               <div id="nav-account-dropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-dropdown">
                 <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                
+
                 <% if current_user.superadmin_role? %>
                   <div class="dropdown-divider"></div>
                   <%= link_to "Admin area", rails_admin_path, class: "dropdown-item" %>

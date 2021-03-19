@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container py-6">
   <p>
     <strong>Title:</strong>
     <%= @recipe.title %>
@@ -19,6 +19,9 @@
     <% end %>
   </p>
 
-  <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+  <% if can? :update, @recipe %>
+    <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+  <% end %>
+
   <%= link_to 'Back', recipes_path %>
 </div>

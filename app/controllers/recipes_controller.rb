@@ -21,26 +21,24 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-
     if @recipe.save
-       redirect_to @recipe, notice: 'Recipe was successfully created.'
+      redirect_to @recipe, notice: 'Recipe successfully created.'
     else
-       render :new
+      render :new
     end
   end
 
   def update
     if @recipe.update(recipe_params)
-       redirect_to @recipe, notice: 'Recipe was successfully updated.'
+      redirect_to @recipe, notice: 'Recipe successfully updated.'
     else
-       render :edit
+      render :edit
     end
   end
 
   def destroy
     @recipe.destroy
-
-    redirect_to recipes_url, notice: 'Recipe was successfully destroyed.'
+    redirect_to recipes_url, notice: 'Recipe successfully destroyed.'
   end
 
   private

@@ -1,8 +1,7 @@
-<div class="container">
-  <h1>Recipes</h1>
+<h1>Recipes</h1>
 
-  <div class="container p-2 my-1">
-    <% unless @recipes.empty? %>
+<div class="container p-2 my-1">
+  <% unless @recipes.empty? %>
     <table class='table'>
       <thead>
         <tr>
@@ -14,27 +13,26 @@
 
       <tbody>
         <% @recipes.each do |recipe| %>
-        <tr>
-          <td><%= recipe.title %></td>
-          <td><%= recipe.content %></td>
-          <td><%= link_to 'Show', recipe %></td>
-          <% if can? :update, recipe %>
-          <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-          <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% else %>
-          <th colspan='2'></th>
-          <% end %>
-        </tr>
+          <tr>
+            <td><%= recipe.title %></td>
+            <td><%= recipe.content %></td>
+            <td><%= link_to 'Show', recipe %></td>
+            <% if can? :update, recipe %>
+              <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+              <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% else %>
+              <th colspan='2'></th>
+            <% end %>
+          </tr>
         <% end %>
       </tbody>
     </table>
-    <% end %>
-  </div>
-  <br>
-
-  <div class="form-group">
-    <%= link_to 'New Recipe', new_recipe_path, class: "btn btn-primary" %>
-  </div>
-
-  <%= link_to 'Back', root_path %>
+  <% end %>
 </div>
+<br>
+
+<div class="form-group">
+  <%= link_to 'New Recipe', new_recipe_path, class: "btn btn-primary" %>
+</div>
+
+<%= link_to 'Back', root_path %>

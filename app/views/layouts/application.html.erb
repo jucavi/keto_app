@@ -8,7 +8,13 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/messages' %>
 
-    <%= yield %>
+    <% if params[:controller] == 'pages' %>
+      <%= yield %>
+    <% else %>
+      <div class="container py-6">
+        <%= yield %>
+      </div>
+    <% end %>
 
     <%= render 'shared/footer' %>
   </body>

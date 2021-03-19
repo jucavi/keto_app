@@ -11,11 +11,11 @@
 
   <p>
     <% @recipe.recipe_ingredients.each do |rec_ing| %>
-    <p>
-      <%= rec_ing.amount %>
-      <%= rec_ing.unit %>
-      <%= Ingredient.find(rec_ing.ingredient_id).name %>
-    </p>
+      <p>
+        <%= rec_ing.amount %>
+        <%= rec_ing.unit %>
+        <%= rec_ing.ingredient_name %>
+      </p>
     <% end %>
   </p>
 

@@ -43,7 +43,7 @@ $(document).on('ready page:load turbolinks:load', function() {
           if ($("#mainNav").offset().top > 100) {
               $("#mainNav").addClass("navbar-shrink");
           } else {
-              if ($("#mainNav.landing_page")[0]) {
+              if ($("#mainNav.pages")[0]) {
                 $("#mainNav").removeClass("navbar-shrink");
               }
           }

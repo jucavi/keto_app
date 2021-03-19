@@ -31,7 +31,6 @@ require("@nathanvda/cocoon")
 require("selectize")
 require("packs/ingredient")
 
-
 import "../stylesheets/application"
 
 Rails.start()

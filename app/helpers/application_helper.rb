@@ -9,5 +9,4 @@ module ApplicationHelper
     }
     bootstrap_alert_class[level]
   end
-
 end

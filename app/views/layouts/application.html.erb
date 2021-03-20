@@ -11,9 +11,9 @@
     <% if params[:controller] == 'pages' %>
       <%= yield %>
     <% else %>
-      <div class="container py-6">
+      <main class="container py-6">
         <%= yield %>
-      </div>
+      </main>
     <% end %>
 
     <%= render 'shared/footer' %>

@@ -33,6 +33,7 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 gem 'cocoon'
+gem 'active_storage_validations'
 
 
 group :development, :test do

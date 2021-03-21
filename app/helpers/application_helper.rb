@@ -30,7 +30,7 @@ module ApplicationHelper
     if user.avatar.attached?
       user.avatar.variant(resize: "#{size}x#{size}!")
     else
-      avatar_path(user.email, size: "#{size}")
+      avatar_path(user.email, size: size)
     end
   end
 end

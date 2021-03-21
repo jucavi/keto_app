@@ -1,3 +1,4 @@
 class PagesController < ApplicationController
-    skip_before_action :authenticate_user!, :only => [:landing_page]
+    skip_before_action :authenticate_user!
+    skip_before_action :configure_permitted_parameters
 end

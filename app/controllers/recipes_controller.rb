@@ -50,6 +50,7 @@ class RecipesController < ApplicationController
       params.require(:recipe).permit(
         :title,
         :content,
+        :image,
         recipe_ingredients_attributes: [:id, :amount, :unit, :ingredient_id, :_destroy]
       ).merge(user_id: current_user.id)
     end

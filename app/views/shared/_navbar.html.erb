@@ -13,10 +13,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <%=link_to 'Recipes', recipes_path, class:"nav-link js-scroll-trigger" %>
-        </li>
-
         <% if params[:controller] == 'pages' %>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">About</a>

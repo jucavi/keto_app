@@ -41,6 +41,14 @@ class RecipesController < ApplicationController
     redirect_to recipes_url, notice: 'Recipe successfully destroyed.'
   end
 
+  def search
+    query = params[:search_recipes].presence && params[:search_recipes][:query]
+
+    if query
+      @results = Recipe.search(query).records.to_a
+    end
+  end
+
   private
     def set_recipe
       @recipe = Recipe.find(params[:id])

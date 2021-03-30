@@ -3,9 +3,8 @@
     <%= f.input :amount, class: "col col-sm-2" %>
     <%= f.input :unit, class: "col col-sm-2" %>
     <div class="form-group col-sm-4">
-      <label for="Ingredient" required>Ingredient</label>
-      <abbr title="required">*</abbr>
-      <%= f.collection_select :ingredient_id, Ingredient.order(:name), :id, :name, {}, { class: "selectize" } %>
+      <%= f.label :ingredient_id, "Ingredient", require: :required %>
+      <%= f.collection_select :ingredient_id, Ingredient.order(:name), :id, :name, { label: "Ingredient" }, { class: "selectize" } %>
     </div>
     <div class="center">
       <%= link_to_remove_association f do %>

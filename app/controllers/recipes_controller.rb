@@ -1,8 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  load_and_authorize_resource except: [:index]
-  # skip_authorize_resource :only => :new
+  skip_before_action :authenticate_user!, only: [:index, :show, :search]
+  load_and_authorize_resource except: [:index, :search]
 
   def index
     @recipes = Recipe.all
@@ -39,6 +38,14 @@ class RecipesController < ApplicationController
   def destroy
     @recipe.destroy
     redirect_to recipes_url, notice: 'Recipe successfully destroyed.'
+  end
+
+  def search
+    query = params[:search_recipes].presence && params[:search_recipes][:query]
+
+    if query
+      @results = Recipe.search(query).records.to_a
+    end
   end
 
   private

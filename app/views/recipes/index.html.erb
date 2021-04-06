@@ -1,21 +1,24 @@
-<h1 class="text-center">Recipes</h1>
+<%= simple_form_for :search_recipes, url: search_recipes_path, method: :get do |f| %>
+  <%= f.input :query, inline_label: 'Search', label: false, value: params[:search_recipes].presence && params[:search_recipes][:query] %>
+  <%= f.submit 'Search', class: "btn btn-primary" %>
+<% end %>
 
 <% @recipes.each_slice(3) do |recipes| %>
   <div class="row card-deck">
     <% recipes.each do |recipe| %>
-    <div class="col-md-4">
-      <div class="card">
-        <%= link_to recipe do %>
-        <div class="wrapper">
-          <%= image_tag recipe.image, class: "card-img-top img-fluid" %>
+      <div class="col-md-4">
+        <div class="card">
+          <%= link_to recipe do %>
+          <div class="wrapper">
+            <%= image_tag recipe.image, class: "card-img-top img-fluid" %>
+          </div>
+          <div class="card-body">
+            <h2 class="card-text text-center"><%= link_to recipe.title, recipe %></h2>
+            <div class="container small">Owner <%= "#{recipe.user.user_name}" %></div>
+          </div>
+          <% end %>
         </div>
-        <div class="card-body">
-          <h2 class="card-text text-center"><%= link_to recipe.title, recipe %></h2>
-          <div class="container small">Owner <%= "#{recipe.user.user_name}" %></div>
-        </div>
-        <% end %>
       </div>
-    </div>
     <% end %>
   </div>
 <% end %>

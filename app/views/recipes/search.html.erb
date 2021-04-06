@@ -1,0 +1,32 @@
+<%= form_for :search_recipes, url: search_recipes_path, method: :get do |form| %>
+  <%= form.text_field :query, value: params[:search_recipes].presence && params[:search_recipes][:query] %>
+  <%= form.submit 'Search' %>
+<% end %>
+
+<% unless @results.nil? %>
+  <% if @results.empty? %>
+    <h2>No recipes found matching your query.</h2>
+  <% else %>
+    <h2>Search results</h2>
+
+    <% @results.each_slice(3) do |results| %>
+      <div class="row card-deck">
+        <% results.each do |recipe| %>
+          <div class="col-md-4">
+            <div class="card">
+              <%= link_to recipe do %>
+              <div class="wrapper">
+                <%= image_tag recipe.image, class: "card-img-top img-fluid" %>
+              </div>
+              <div class="card-body">
+                <h2 class="card-text text-center"><%= link_to recipe.title, recipe %></h2>
+                <div class="container small">Owner <%= "#{recipe.user.user_name}" %></div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

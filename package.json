@@ -11,6 +11,7 @@
     "bootstrap": "^4.6.0",
     "jquery": "^3.5.1",
     "jquery.easing": "^1.4.1",
+    "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
     "selectize": "^0.12.6",
     "startbootstrap-grayscale": "^6.0.3",
@@ -19,6 +20,8 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "sass": "^1.32.13",
+    "webpack-cli": "3.3.12",
     "webpack-dev-server": "^3.11.2"
   }
 }

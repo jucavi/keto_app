@@ -36,7 +36,8 @@ gem 'cocoon'
 gem 'active_storage_validations'
 gem 'elasticsearch-model', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
 gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
-gem 'bonsai-elasticsearch-rails'
+# gem 'bonsai-elasticsearch-rails'
+gem 'rexml', '~> 3.2', '>= 3.2.4'
 
 
 

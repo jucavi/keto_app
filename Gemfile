@@ -8,7 +8,7 @@ gem 'rails', '~> 6.1.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
-gem 'puma', '~> 5.0'
+gem 'puma', '>= 5.3.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -37,7 +37,7 @@ gem 'active_storage_validations'
 gem 'elasticsearch-model', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
 gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
 # gem 'bonsai-elasticsearch-rails'
-gem 'rexml', '~> 3.2', '>= 3.2.4'
+gem 'rexml', '>= 3.2.5'
 
 
 

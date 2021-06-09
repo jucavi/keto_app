@@ -1,30 +1,35 @@
+<main class="flex-shrink-0">
+  <div class="container">
+    <% recipe = @recipe %>
+    <div class="row mb-4">    
+      <h2 class="text-center "><%= @recipe.title %></h2>
+    </div>
 
-<h1>
-  <strong><%= @recipe.title %></strong>
-</h1>
+      <div class="row row-cols-1 row-cols-md-4">   
+        <% @recipe.recipe_ingredients.each do |rec_ing| %>      
+          <%= rec_ing.amount %>
+          <%= rec_ing.unit %>
+          <%= rec_ing.ingredient_name %> 
+          
+          <%= image_tag(@recipe.image, style:'height:250px; width:100%') if recipe.image.attached? %>
+
+            
+              <h5 class="card-title text-center"><%= @recipe.content %></h5>  
+         
+          
+        <% end %>
+      </div>
+ 
+    <hr class="my-2">    
+    <div class="actions form-group p-3">   
+      <%= link_to 'Back', recipes_path, class: "btn btn-primary mt-4"  %> 
+      <% if can? :update, @recipe %>
+      <%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-primary mt-4" %> 
+      <% end %>
+    </div>
+  </div>
+</main>
 
 
-<div>
-  <%= image_tag @recipe.image %>
-</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @recipe.content %>
-</p>
 
-<p>
-  <% @recipe.recipe_ingredients.each do |rec_ing| %>
-    <p>
-      <%= rec_ing.amount %>
-      <%= rec_ing.unit %>
-      <%= rec_ing.ingredient_name %>
-    </p>
-  <% end %>
-</p>
-
-<% if can? :update, @recipe %>
-  <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<% end %>
-
-<%= link_to 'Back', recipes_path %>

@@ -1,29 +1,26 @@
-
 <main  class="flex-shrink-0">
-  <div class="container">    
-    <div class="row row-cols-1 row-cols-md-3"> 
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3">
       <% @recipes.each do |recipe| %>
         <div class="col mb-4 mx-auto">
           <div class="card h-100">
-            <%= image_tag(recipe.image, style:'height:250px; width:100%') if recipe.image.attached? %>
+            <%= link_to recipe do %>
+              <%= image_tag(recipe.image, style:'height:250px; width:100%') if recipe.image.attached? %>
+            <% end %>
             <div class="card-body text-center">
               <h2 class="card-text text-center"><%= recipe.title.upcase %></h2>
               <p class="card-text"><%= recipe.content %></p>
-            </div>  
-            <div class="text-center mb-4">       
+            </div>
+            <div class="text-center mb-4">
               <div class="container small">Owner <%= "#{recipe.user.user_name}" %></div>
-            </div>            
+            </div>
           </div>
         </div>
-      <% end %>      
-    </div>         
-    <hr class="my-2">    
-      <div class="actions form-group p-3">   
-        <%= link_to 'Back', root_path, class: "btn btn-primary mt-4" %> 
-        <%= link_to 'New Recipe', new_recipe_path, class: "btn btn-primary mt-4" %>  
-      </div>
-    </div>       
-  </div> 
-</main>  
-
-        
+      <% end %>
+    </div>
+    <div class="actions form-group p-3">
+      <%= link_to 'Back', root_path, class: "btn btn-primary mt-4" %>
+      <%= link_to 'New Recipe', new_recipe_path, class: "btn btn-primary mt-4" %>
+    </div>
+  </div>
+</main>

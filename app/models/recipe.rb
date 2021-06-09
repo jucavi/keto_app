@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  include Searchable
+  # include Searchable
 
   validates :title, :content, presence: true
   before_save :prettify
@@ -17,15 +17,15 @@ class Recipe < ApplicationRecord
     self.title = title.titleize
   end
 
-  settings do
-    mappings dynamic: false, analyzer: :english do
-      indexes :title, type: :text
-      indexes :content, type: :text
-      indexes :ingredients, type: :object do
-        indexes :name
-      end
-    end
-  end
+  # settings do
+  #   mappings dynamic: false, analyzer: :english do
+  #     indexes :title, type: :text
+  #     indexes :content, type: :text
+  #     indexes :ingredients, type: :object do
+  #       indexes :name
+  #     end
+  #   end
+  # end
 
   # Customize the JSON serialization for Elasticsearch
   def as_indexed_json(options={})

@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Web app exercise (in progress) developed to help a Diet Coach to search and manage Recipes with clients and groups.
 
-Things you may want to cover:
+Uses Ruby on Rails
 
-* Ruby version
+Bootstrap
 
-* System dependencies
+Postgres
 
-* Configuration
+Deployment to Heroku http://ketoapp.herokuapp.com/
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
